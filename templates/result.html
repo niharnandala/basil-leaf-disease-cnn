@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Result — Basil Leaf Disease Detection</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 34rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
+  img { max-width: 100%; border-radius: .5rem; margin: 1rem 0; }
+  .label { font-size: 1.3rem; font-weight: 600; }
+  .conf { opacity: .7; }
+  a { display: inline-block; margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+  <img src="{{ url_for('static', filename=image_path) }}" alt="uploaded leaf">
+  <p class="label">{{ disease }} <span class="conf">({{ confidence }} confidence)</span></p>
+  <p>{{ remedy }}</p>
+  <a href="/">Classify another</a>
+</body>
+</html>
