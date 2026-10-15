@@ -1,0 +1,44 @@
+# Settings for the basil leaf disease classifier.
+# Every value here matches the run recorded in artifacts/training_history.json.
+
+data:
+  # Directory holding one subfolder per class. Override on the command line
+  # with --data-dir, or set BASIL_DATA_DIR.
+  dir: data/basil_leaves
+  image_size: 224
+  batch_size: 32
+  validation_split: 0.2
+  seed: 42
+
+# Alphabetical, because Keras' flow_from_directory sorts class folders.
+classes:
+  - bacterial
+  - fungal
+  - healthy
+  - pests
+
+augmentation:
+  rotation_range: 30
+  width_shift_range: 0.2
+  height_shift_range: 0.2
+  shear_range: 0.2
+  zoom_range: 0.2
+  horizontal_flip: true
+  fill_mode: nearest
+
+model:
+  conv_filters: [32, 64, 128, 256]
+  dense_units: [512, 256]
+  dropout: [0.5, 0.3]
+  learning_rate: 0.001
+
+training:
+  epochs: 20
+  early_stopping_patience: 5
+  reduce_lr_factor: 0.2
+  reduce_lr_patience: 3
+
+paths:
+  model: artifacts/basil_disease_best_model.keras
+  history: artifacts/training_history.json
+  figures: artifacts

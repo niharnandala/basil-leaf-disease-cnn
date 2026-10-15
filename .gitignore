@@ -1,18 +1,21 @@
-# trained model checkpoints, far too large for git
-models/
-*.keras
-*.h5
+# trained checkpoints, too large for git
+artifacts/*.keras
+artifacts/*.h5
 
-# images people upload while using the app
-static/uploads/*
-!static/uploads/.gitkeep
+# images uploaded through the web app
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+
+# dataset
+data/
 
 # python
 __pycache__/
 *.py[cod]
 .venv/
 venv/
-env/
+.pytest_cache/
+.ruff_cache/
 
 # notebooks
 .ipynb_checkpoints/

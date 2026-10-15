@@ -1,0 +1,6 @@
+-r requirements.txt
+matplotlib==3.9.2
+pytest==8.3.3
+ruff==0.6.9
+scikit-learn==1.5.2
+seaborn==0.13.2
